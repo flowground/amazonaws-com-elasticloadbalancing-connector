@@ -1,0 +1,101 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for AddTags.",
+            "example": {
+                "LoadBalancerNames": [
+                    "my-load-balancer"
+                ],
+                "Tags": [
+                    {
+                        "Key": "project",
+                        "Value": "lima"
+                    },
+                    {
+                        "Key": "department",
+                        "Value": "digital-media"
+                    }
+                ]
+            },
+            "properties": {
+                "LoadBalancerNames": {
+                    "description": "The name of the load balancer. You can specify one load balancer only.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "Tags": {
+                    "description": "The tags.",
+                    "items": {
+                        "description": "Information about a tag.",
+                        "properties": {
+                            "Key": {
+                                "description": "The key of the tag.",
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value of the tag.",
+                                "maxLength": 256,
+                                "minLength": 0,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key"
+                        ],
+                        "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "LoadBalancerNames",
+                "Tags"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

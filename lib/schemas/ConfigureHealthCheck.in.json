@@ -1,0 +1,106 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for ConfigureHealthCheck.",
+            "example": {
+                "HealthCheck": {
+                    "HealthyThreshold": 2,
+                    "Interval": 30,
+                    "Target": "HTTP:80/png",
+                    "Timeout": 3,
+                    "UnhealthyThreshold": 2
+                },
+                "LoadBalancerName": "my-load-balancer"
+            },
+            "properties": {
+                "HealthCheck": {
+                    "description": "The configuration information.",
+                    "properties": {
+                        "HealthyThreshold": {
+                            "description": "The number of consecutive health checks successes required before moving the instance to the <code>Healthy</code> state.",
+                            "maximum": 10,
+                            "minimum": 2,
+                            "type": "integer"
+                        },
+                        "Interval": {
+                            "description": "The approximate interval, in seconds, between health checks of an individual instance.",
+                            "maximum": 300,
+                            "minimum": 5,
+                            "type": "integer"
+                        },
+                        "Target": {
+                            "description": "<p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1) through 65535.</p> <p>TCP is the default, specified as a TCP: port pair, for example \"TCP:5000\". In this case, a health check simply attempts to open a TCP connection to the instance on the specified port. Failure to connect within the configured timeout is considered unhealthy.</p> <p>SSL is also specified as SSL: port pair, for example, SSL:5000.</p> <p>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a HTTP:port;/;PathToPing; grouping, for example \"HTTP:80/weather/us/wa/seattle\". In this case, a HTTP GET request is issued to the instance on the given port and path. Any answer other than \"200 OK\" within the timeout period is considered unhealthy.</p> <p>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or less.</p>",
+                            "type": "string"
+                        },
+                        "Timeout": {
+                            "description": "<p>The amount of time, in seconds, during which no response means a failed health check.</p> <p>This value must be less than the <code>Interval</code> value.</p>",
+                            "maximum": 60,
+                            "minimum": 2,
+                            "type": "integer"
+                        },
+                        "UnhealthyThreshold": {
+                            "description": "The number of consecutive health check failures required before moving the instance to the <code>Unhealthy</code> state.",
+                            "maximum": 10,
+                            "minimum": 2,
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "Target",
+                        "Interval",
+                        "Timeout",
+                        "UnhealthyThreshold",
+                        "HealthyThreshold"
+                    ],
+                    "type": "object"
+                },
+                "LoadBalancerName": {
+                    "description": "The name of the load balancer.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LoadBalancerName",
+                "HealthCheck"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

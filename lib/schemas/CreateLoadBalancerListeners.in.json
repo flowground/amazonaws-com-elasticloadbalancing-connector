@@ -1,0 +1,104 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for CreateLoadBalancerListeners.",
+            "example": {
+                "Listeners": [
+                    {
+                        "InstancePort": 80,
+                        "InstanceProtocol": "HTTP",
+                        "LoadBalancerPort": 443,
+                        "Protocol": "HTTPS",
+                        "SSLCertificateId": "arn:aws:iam::123456789012:server-certificate/my-server-cert"
+                    }
+                ],
+                "LoadBalancerName": "my-load-balancer"
+            },
+            "properties": {
+                "Listeners": {
+                    "description": "The listeners.",
+                    "items": {
+                        "description": "<p>Information about a listener.</p> <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html\">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+                        "properties": {
+                            "InstancePort": {
+                                "description": "The port on which the instance is listening.",
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "type": "integer"
+                            },
+                            "InstanceProtocol": {
+                                "description": "<p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>",
+                                "type": "string"
+                            },
+                            "LoadBalancerPort": {
+                                "description": "The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.",
+                                "type": "integer"
+                            },
+                            "Protocol": {
+                                "description": "The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or SSL.",
+                                "type": "string"
+                            },
+                            "SSLCertificateId": {
+                                "description": "The Amazon Resource Name (ARN) of the server certificate.",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Protocol",
+                            "LoadBalancerPort",
+                            "InstancePort"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "LoadBalancerName": {
+                    "description": "The name of the load balancer.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LoadBalancerName",
+                "Listeners"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

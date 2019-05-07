@@ -1,0 +1,163 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for ModifyLoadBalancerAttributes.",
+            "example": {
+                "LoadBalancerAttributes": {
+                    "ConnectionDraining": {
+                        "Enabled": true,
+                        "Timeout": 300
+                    }
+                },
+                "LoadBalancerName": "my-load-balancer"
+            },
+            "properties": {
+                "LoadBalancerAttributes": {
+                    "description": "The attributes for the load balancer.",
+                    "properties": {
+                        "AccessLog": {
+                            "description": "<p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html\">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+                            "properties": {
+                                "EmitInterval": {
+                                    "description": "<p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p> <p>Default: 60 minutes</p>",
+                                    "type": "integer"
+                                },
+                                "Enabled": {
+                                    "description": "Specifies whether access logs are enabled for the load balancer.",
+                                    "type": "boolean"
+                                },
+                                "S3BucketName": {
+                                    "description": "The name of the Amazon S3 bucket where the access logs are stored.",
+                                    "type": "string"
+                                },
+                                "S3BucketPrefix": {
+                                    "description": "The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "Enabled"
+                            ],
+                            "type": "object"
+                        },
+                        "AdditionalAttributes": {
+                            "description": "This parameter is reserved.",
+                            "items": {
+                                "description": "This data type is reserved.",
+                                "properties": {
+                                    "Key": {
+                                        "description": "This parameter is reserved.",
+                                        "maxLength": 256,
+                                        "pattern": "^[a-zA-Z0-9.]+$",
+                                        "type": "string"
+                                    },
+                                    "Value": {
+                                        "description": "This parameter is reserved.",
+                                        "maxLength": 256,
+                                        "pattern": "^[a-zA-Z0-9.]+$",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "maxItems": 10,
+                            "type": "array"
+                        },
+                        "ConnectionDraining": {
+                            "description": "<p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html\">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+                            "properties": {
+                                "Enabled": {
+                                    "description": "Specifies whether connection draining is enabled for the load balancer.",
+                                    "type": "boolean"
+                                },
+                                "Timeout": {
+                                    "description": "The maximum time, in seconds, to keep the existing connections open before deregistering the instances.",
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "Enabled"
+                            ],
+                            "type": "object"
+                        },
+                        "ConnectionSettings": {
+                            "description": "<p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p> <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html\">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+                            "properties": {
+                                "IdleTimeout": {
+                                    "description": "The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.",
+                                    "maximum": 3600,
+                                    "minimum": 1,
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "IdleTimeout"
+                            ],
+                            "type": "object"
+                        },
+                        "CrossZoneLoadBalancing": {
+                            "description": "<p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html\">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+                            "properties": {
+                                "Enabled": {
+                                    "description": "Specifies whether cross-zone load balancing is enabled for the load balancer.",
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "Enabled"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                },
+                "LoadBalancerName": {
+                    "description": "The name of the load balancer.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LoadBalancerName",
+                "LoadBalancerAttributes"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

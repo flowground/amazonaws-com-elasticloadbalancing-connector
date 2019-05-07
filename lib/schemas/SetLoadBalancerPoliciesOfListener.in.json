@@ -1,0 +1,74 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for SetLoadBalancePoliciesOfListener.",
+            "example": {
+                "LoadBalancerName": "my-load-balancer",
+                "LoadBalancerPort": 80,
+                "PolicyNames": [
+                    "my-SSLNegotiation-policy"
+                ]
+            },
+            "properties": {
+                "LoadBalancerName": {
+                    "description": "The name of the load balancer.",
+                    "type": "string"
+                },
+                "LoadBalancerPort": {
+                    "description": "The external port of the load balancer.",
+                    "type": "integer"
+                },
+                "PolicyNames": {
+                    "description": "The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "LoadBalancerName",
+                "LoadBalancerPort",
+                "PolicyNames"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

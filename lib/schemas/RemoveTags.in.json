@@ -1,0 +1,86 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for RemoveTags.",
+            "example": {
+                "LoadBalancerNames": [
+                    "my-load-balancer"
+                ],
+                "Tags": [
+                    {
+                        "Key": "project"
+                    }
+                ]
+            },
+            "properties": {
+                "LoadBalancerNames": {
+                    "description": "The name of the load balancer. You can specify a maximum of one load balancer name.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "Tags": {
+                    "description": "The list of tag keys to remove.",
+                    "items": {
+                        "description": "The key of a tag.",
+                        "properties": {
+                            "Key": {
+                                "description": "The name of the key.",
+                                "maxLength": 128,
+                                "minLength": 1,
+                                "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "LoadBalancerNames",
+                "Tags"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

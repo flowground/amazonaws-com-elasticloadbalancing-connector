@@ -1,0 +1,68 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for ApplySecurityGroupsToLoadBalancer.",
+            "example": {
+                "LoadBalancerName": "my-load-balancer",
+                "SecurityGroups": [
+                    "sg-fc448899"
+                ]
+            },
+            "properties": {
+                "LoadBalancerName": {
+                    "description": "The name of the load balancer.",
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "description": "The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "LoadBalancerName",
+                "SecurityGroups"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

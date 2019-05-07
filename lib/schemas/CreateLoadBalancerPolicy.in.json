@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Contains the parameters for CreateLoadBalancerPolicy.",
+            "example": {
+                "LoadBalancerName": "my-load-balancer",
+                "PolicyAttributes": [
+                    {
+                        "AttributeName": "PublicKeyPolicyName",
+                        "AttributeValue": "my-PublicKey-policy"
+                    }
+                ],
+                "PolicyName": "my-authentication-policy",
+                "PolicyTypeName": "BackendServerAuthenticationPolicyType"
+            },
+            "properties": {
+                "LoadBalancerName": {
+                    "description": "The name of the load balancer.",
+                    "type": "string"
+                },
+                "PolicyAttributes": {
+                    "description": "The policy attributes.",
+                    "items": {
+                        "description": "Information about a policy attribute.",
+                        "properties": {
+                            "AttributeName": {
+                                "description": "The name of the attribute.",
+                                "type": "string"
+                            },
+                            "AttributeValue": {
+                                "description": "The value of the attribute.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "PolicyName": {
+                    "description": "The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.",
+                    "type": "string"
+                },
+                "PolicyTypeName": {
+                    "description": "The name of the base policy type. To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LoadBalancerName",
+                "PolicyName",
+                "PolicyTypeName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
