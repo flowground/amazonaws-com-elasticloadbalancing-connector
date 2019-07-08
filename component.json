@@ -1,6 +1,6 @@
 {
     "title": "Elastic Load Balancing (elasticloadbalancing)",
-    "description": "<fullname>Elastic Load Balancing</fullname> <p>A load balancer can distribute incoming traffic across your EC2 instances. This enables you to increase the availability of your application. The load balancer also monitors the health of its registered instances and ensures that it routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by specifying one or more listeners, which are configured with a protocol and port number for connections from clients to the load balancer and a protocol and port number for connections from the load balancer to the instances.</p> <p>Elastic Load Balancing supports three types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers. You can select a load balancer based on your application needs. For more information, see the <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/\">Elastic Load Balancing User Guide</a>.</p> <p>This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports Application Load Balancers and Network Load Balancers.</p> <p>To get started, create a load balancer with one or more listeners using <a>CreateLoadBalancer</a>. Register your instances with the load balancer using <a>RegisterInstancesWithLoadBalancer</a>.</p> <p>All Elastic Load Balancing operations are <i>idempotent</i>, which means that they complete at most one time. If you repeat an operation, it succeeds with a 200 OK response code.</p>",
+    "description": "Elastic Load Balancing A load balancer can distribute incoming traffic across\nyour EC2 instances. This enables you to increase the availability of your\napplication. The load balancer also monitors the health of its registered\ninstances and ensures that it routes traffic only to healthy instances. You\nconfigure your load balancer to accept incoming traffic by specifying one or\nmore listeners, which are configured with a protocol and port number for\nconnections from clients to the load balancer and a protocol and port number for\nconnections from the load balancer to the instances.\n\nElastic Load Balancing supports three types of load balancers: Application Load\nBalancers, Network Load Balancers, and Classic Load Balancers. You can select a\nload balancer based on your application needs. For more information, see the \nElastic Load Balancing User Guide\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/].\n\nThis reference covers the 2012-06-01 API, which supports Classic Load Balancers.\nThe 2015-12-01 API supports Application Load Balancers and Network Load\nBalancers.\n\nTo get started, create a load balancer with one or more listeners using \nCreateLoadBalancer. Register your instances with the load balancer using \nRegisterInstancesWithLoadBalancer.\n\nAll Elastic Load Balancing operations are idempotent, which means that they\ncomplete at most one time. If you repeat an operation, it succeeds with a 200 OK\nresponse code.",
     "docsUrl": "https://aws.amazon.com/elasticloadbalancing/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/elasticloadbalancing/2012-06-01/swagger.json",
     "envVars": {},
@@ -38,8 +38,8 @@
     "actions": {
         "AddTags": {
             "main": "./lib/actions/AddTags.js",
-            "title": "<p>Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the load balancer, <code>AddTags</code> updates its value.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html\">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Adds the specified tags to the specified load balancer. Each load balancer can have a maximum of 10 tags.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the load balancer, <code>AddTags</code> updates its value.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html\">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "AddTags",
+            "description": "Adds the specified tags to the specified load balancer. Each load balancer can\nhave a maximum of 10 tags.\n\nEach tag consists of a key and an optional value. If a tag with the same key is\nalready associated with the load balancer, AddTags updates its value.\n\nFor more information, see Tag Your Classic Load Balancer\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -55,8 +55,8 @@
         },
         "ApplySecurityGroupsToLoadBalancer": {
             "main": "./lib/actions/ApplySecurityGroupsToLoadBalancer.js",
-            "title": "<p>Associates one or more security groups with your load balancer in a virtual private cloud (VPC). The specified security groups override the previously associated security groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups\">Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Associates one or more security groups with your load balancer in a virtual private cloud (VPC). The specified security groups override the previously associated security groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups\">Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "ApplySecurityGroupsToLoadBalancer",
+            "description": "Associates one or more security groups with your load balancer in a virtual\nprivate cloud (VPC). The specified security groups override the previously\nassociated security groups.\n\nFor more information, see Security Groups for Load Balancers in a VPC\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -72,8 +72,8 @@
         },
         "AttachLoadBalancerToSubnets": {
             "main": "./lib/actions/AttachLoadBalancerToSubnets.js",
-            "title": "<p>Adds one or more subnets to the set of configured subnets for the specified load balancer.</p> <p>The load balancer evenly distributes requests across all registered subnets. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html\">Add or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Adds one or more subnets to the set of configured subnets for the specified load balancer.</p> <p>The load balancer evenly distributes requests across all registered subnets. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html\">Add or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "AttachLoadBalancerToSubnets",
+            "description": "Adds one or more subnets to the set of configured subnets for the specified load\nbalancer.\n\nThe load balancer evenly distributes requests across all registered subnets. For\nmore information, see Add or Remove Subnets for Your Load Balancer in a VPC\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -89,8 +89,8 @@
         },
         "ConfigureHealthCheck": {
             "main": "./lib/actions/ConfigureHealthCheck.js",
-            "title": "<p>Specifies the health check settings to use when evaluating the health state of your EC2 instances.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html\">Configure Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Specifies the health check settings to use when evaluating the health state of your EC2 instances.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html\">Configure Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "ConfigureHealthCheck",
+            "description": "Specifies the health check settings to use when evaluating the health state of\nyour EC2 instances.\n\nFor more information, see Configure Health Checks for Your Load Balancer\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -106,8 +106,8 @@
         },
         "CreateAppCookieStickinessPolicy": {
             "main": "./lib/actions/CreateAppCookieStickinessPolicy.js",
-            "title": "<p>Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>, except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>, follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application cookie.</p> <p>If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application\">Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>, except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>, follows the lifetime of the application-generated cookie specified in the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application cookie.</p> <p>If the application cookie is explicitly removed or expires, the session stops being sticky until a new application cookie is issued.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application\">Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "CreateAppCookieStickinessPolicy",
+            "description": "Generates a stickiness policy with sticky session lifetimes that follow that of\nan application-generated cookie. This policy can be associated only with\nHTTP/HTTPS listeners.\n\nThis policy is similar to the policy created by CreateLBCookieStickinessPolicy,\nexcept that the lifetime of the special Elastic Load Balancing cookie, AWSELB,\nfollows the lifetime of the application-generated cookie specified in the policy\nconfiguration. The load balancer only inserts a new stickiness cookie when the\napplication response includes a new application cookie.\n\nIf the application cookie is explicitly removed or expires, the session stops\nbeing sticky until a new application cookie is issued.\n\nFor more information, see Application-Controlled Session Stickiness\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -123,8 +123,8 @@
         },
         "CreateLBCookieStickinessPolicy": {
             "main": "./lib/actions/CreateLBCookieStickinessPolicy.js",
-            "title": "<p>Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>When a load balancer implements this policy, the load balancer uses a special cookie to track the instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.</p> <p>A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie is based on the cookie expiration time, which is specified in the policy configuration.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration\">Duration-Based Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.</p> <p>When a load balancer implements this policy, the load balancer uses a special cookie to track the instance for each request. When the load balancer receives a request, it first checks to see if this cookie is present in the request. If so, the load balancer sends the request to the application server specified in the cookie. If not, the load balancer sends the request to a server that is chosen based on the existing load-balancing algorithm.</p> <p>A cookie is inserted into the response for binding subsequent requests from the same user to that server. The validity of the cookie is based on the cookie expiration time, which is specified in the policy configuration.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration\">Duration-Based Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "CreateLBCookieStickinessPolicy",
+            "description": "Generates a stickiness policy with sticky session lifetimes controlled by the\nlifetime of the browser (user-agent) or a specified expiration period. This\npolicy can be associated only with HTTP/HTTPS listeners.\n\nWhen a load balancer implements this policy, the load balancer uses a special\ncookie to track the instance for each request. When the load balancer receives a\nrequest, it first checks to see if this cookie is present in the request. If so,\nthe load balancer sends the request to the application server specified in the\ncookie. If not, the load balancer sends the request to a server that is chosen\nbased on the existing load-balancing algorithm.\n\nA cookie is inserted into the response for binding subsequent requests from the\nsame user to that server. The validity of the cookie is based on the cookie\nexpiration time, which is specified in the policy configuration.\n\nFor more information, see Duration-Based Session Stickiness\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -140,8 +140,8 @@
         },
         "CreateLoadBalancer": {
             "main": "./lib/actions/CreateLoadBalancer.js",
-            "title": "<p>Creates a Classic Load Balancer.</p> <p>You can add listeners, security groups, subnets, and tags when you create your load balancer, or you can add them later using <a>CreateLoadBalancerListeners</a>, <a>ApplySecurityGroupsToLoadBalancer</a>, <a>AttachLoadBalancerToSubnets</a>, and <a>AddTags</a>.</p> <p>To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html\">Limits for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Creates a Classic Load Balancer.</p> <p>You can add listeners, security groups, subnets, and tags when you create your load balancer, or you can add them later using <a>CreateLoadBalancerListeners</a>, <a>ApplySecurityGroupsToLoadBalancer</a>, <a>AttachLoadBalancerToSubnets</a>, and <a>AddTags</a>.</p> <p>To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html\">Limits for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "CreateLoadBalancer",
+            "description": "Creates a Classic Load Balancer.\n\nYou can add listeners, security groups, subnets, and tags when you create your\nload balancer, or you can add them later using CreateLoadBalancerListeners, \nApplySecurityGroupsToLoadBalancer, AttachLoadBalancerToSubnets, and AddTags.\n\nTo describe your current load balancers, see DescribeLoadBalancers. When you are\nfinished with a load balancer, you can delete it using DeleteLoadBalancer.\n\nYou can create up to 20 load balancers per region per account. You can request\nan increase for the number of load balancers for your account. For more\ninformation, see Limits for Your Classic Load Balancer\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -157,8 +157,8 @@
         },
         "CreateLoadBalancerListeners": {
             "main": "./lib/actions/CreateLoadBalancerListeners.js",
-            "title": "<p>Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html\">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html\">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "CreateLoadBalancerListeners",
+            "description": "Creates one or more listeners for the specified load balancer. If a listener\nwith the specified port does not already exist, it is created; otherwise, the\nproperties of the new listener must match the properties of the existing\nlistener.\n\nFor more information, see Listeners for Your Classic Load Balancer\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -174,8 +174,8 @@
         },
         "CreateLoadBalancerPolicy": {
             "main": "./lib/actions/CreateLoadBalancerPolicy.js",
-            "title": "<p>Creates a policy with the specified attributes for the specified load balancer.</p> <p>Policies are settings that are saved for your load balancer and that can be applied to the listener or the application server, depending on the policy type.</p>",
-            "description": "<p>Creates a policy with the specified attributes for the specified load balancer.</p> <p>Policies are settings that are saved for your load balancer and that can be applied to the listener or the application server, depending on the policy type.</p>",
+            "title": "CreateLoadBalancerPolicy",
+            "description": "Creates a policy with the specified attributes for the specified load balancer.\n\nPolicies are settings that are saved for your load balancer and that can be\napplied to the listener or the application server, depending on the policy type.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -191,8 +191,8 @@
         },
         "DeleteLoadBalancer": {
             "main": "./lib/actions/DeleteLoadBalancer.js",
-            "title": "<p>Deletes the specified load balancer.</p> <p>If you are attempting to recreate a load balancer, you must reconfigure all settings. The DNS name associated with a deleted load balancer are no longer usable. The name and associated DNS record of the deleted load balancer no longer exist and traffic sent to any of its IP addresses is no longer delivered to your instances.</p> <p>If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code> still succeeds.</p>",
-            "description": "<p>Deletes the specified load balancer.</p> <p>If you are attempting to recreate a load balancer, you must reconfigure all settings. The DNS name associated with a deleted load balancer are no longer usable. The name and associated DNS record of the deleted load balancer no longer exist and traffic sent to any of its IP addresses is no longer delivered to your instances.</p> <p>If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code> still succeeds.</p>",
+            "title": "DeleteLoadBalancer",
+            "description": "Deletes the specified load balancer.\n\nIf you are attempting to recreate a load balancer, you must reconfigure all\nsettings. The DNS name associated with a deleted load balancer are no longer\nusable. The name and associated DNS record of the deleted load balancer no\nlonger exist and traffic sent to any of its IP addresses is no longer delivered\nto your instances.\n\nIf the load balancer does not exist or has already been deleted, the call to \nDeleteLoadBalancer still succeeds.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -208,7 +208,7 @@
         },
         "DeleteLoadBalancerListeners": {
             "main": "./lib/actions/DeleteLoadBalancerListeners.js",
-            "title": "Deletes the specified listeners from the specified load balancer.",
+            "title": "DeleteLoadBalancerListeners",
             "description": "Deletes the specified listeners from the specified load balancer.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "DeleteLoadBalancerPolicy": {
             "main": "./lib/actions/DeleteLoadBalancerPolicy.js",
-            "title": "Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.",
+            "title": "DeleteLoadBalancerPolicy",
             "description": "Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.",
             "fields": {
                 "verbose": {
@@ -242,8 +242,8 @@
         },
         "DeregisterInstancesFromLoadBalancer": {
             "main": "./lib/actions/DeregisterInstancesFromLoadBalancer.js",
-            "title": "<p>Deregisters the specified instances from the specified load balancer. After the instance is deregistered, it no longer receives traffic from the load balancer.</p> <p>You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered from the load balancer.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html\">Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Deregisters the specified instances from the specified load balancer. After the instance is deregistered, it no longer receives traffic from the load balancer.</p> <p>You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered from the load balancer.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html\">Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "DeregisterInstancesFromLoadBalancer",
+            "description": "Deregisters the specified instances from the specified load balancer. After the\ninstance is deregistered, it no longer receives traffic from the load balancer.\n\nYou can use DescribeLoadBalancers to verify that the instance is deregistered\nfrom the load balancer.\n\nFor more information, see Register or De-Register EC2 Instances\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -259,8 +259,8 @@
         },
         "DescribeAccountLimits": {
             "main": "./lib/actions/DescribeAccountLimits.js",
-            "title": "<p>Describes the current Elastic Load Balancing resource limits for your AWS account.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html\">Limits for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Describes the current Elastic Load Balancing resource limits for your AWS account.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html\">Limits for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "DescribeAccountLimits",
+            "description": "Describes the current Elastic Load Balancing resource limits for your AWS\naccount.\n\nFor more information, see Limits for Your Classic Load Balancer\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -276,7 +276,7 @@
         },
         "DescribeInstanceHealth": {
             "main": "./lib/actions/DescribeInstanceHealth.js",
-            "title": "Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.",
+            "title": "DescribeInstanceHealth",
             "description": "Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "DescribeLoadBalancerAttributes": {
             "main": "./lib/actions/DescribeLoadBalancerAttributes.js",
-            "title": "Describes the attributes for the specified load balancer.",
+            "title": "DescribeLoadBalancerAttributes",
             "description": "Describes the attributes for the specified load balancer.",
             "fields": {
                 "verbose": {
@@ -310,8 +310,8 @@
         },
         "DescribeLoadBalancerPolicies": {
             "main": "./lib/actions/DescribeLoadBalancerPolicies.js",
-            "title": "<p>Describes the specified policies.</p> <p>If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies. The names of the sample policies have the <code>ELBSample-</code> prefix.</p>",
-            "description": "<p>Describes the specified policies.</p> <p>If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies. The names of the sample policies have the <code>ELBSample-</code> prefix.</p>",
+            "title": "DescribeLoadBalancerPolicies",
+            "description": "Describes the specified policies.\n\nIf you specify a load balancer name, the action returns the descriptions of all\npolicies created for the load balancer. If you specify a policy name associated\nwith your load balancer, the action returns the description of that policy. If\nyou don't specify a load balancer name, the action returns descriptions of the\nspecified sample policies, or descriptions of all sample policies. The names of\nthe sample policies have the ELBSample- prefix.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -327,8 +327,8 @@
         },
         "DescribeLoadBalancerPolicyTypes": {
             "main": "./lib/actions/DescribeLoadBalancerPolicyTypes.js",
-            "title": "<p>Describes the specified load balancer policy types or all load balancer policy types.</p> <p>The description of each type indicates how it can be used. For example, some policies can be used only with layer 7 listeners, some policies can be used only with layer 4 listeners, and some policies can be used only with your EC2 instances.</p> <p>You can use <a>CreateLoadBalancerPolicy</a> to create a policy configuration for any of these policy types. Then, depending on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p>",
-            "description": "<p>Describes the specified load balancer policy types or all load balancer policy types.</p> <p>The description of each type indicates how it can be used. For example, some policies can be used only with layer 7 listeners, some policies can be used only with layer 4 listeners, and some policies can be used only with your EC2 instances.</p> <p>You can use <a>CreateLoadBalancerPolicy</a> to create a policy configuration for any of these policy types. Then, depending on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a> or <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.</p>",
+            "title": "DescribeLoadBalancerPolicyTypes",
+            "description": "Describes the specified load balancer policy types or all load balancer policy\ntypes.\n\nThe description of each type indicates how it can be used. For example, some\npolicies can be used only with layer 7 listeners, some policies can be used only\nwith layer 4 listeners, and some policies can be used only with your EC2\ninstances.\n\nYou can use CreateLoadBalancerPolicy to create a policy configuration for any of\nthese policy types. Then, depending on the policy type, use either \nSetLoadBalancerPoliciesOfListener or SetLoadBalancerPoliciesForBackendServer to\nset the policy.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -344,7 +344,7 @@
         },
         "DescribeLoadBalancers": {
             "main": "./lib/actions/DescribeLoadBalancers.js",
-            "title": "Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.",
+            "title": "DescribeLoadBalancers",
             "description": "Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "DescribeTags": {
             "main": "./lib/actions/DescribeTags.js",
-            "title": "Describes the tags associated with the specified load balancers.",
+            "title": "DescribeTags",
             "description": "Describes the tags associated with the specified load balancers.",
             "fields": {
                 "verbose": {
@@ -378,8 +378,8 @@
         },
         "DetachLoadBalancerFromSubnets": {
             "main": "./lib/actions/DetachLoadBalancerFromSubnets.js",
-            "title": "<p>Removes the specified subnets from the set of configured subnets for the load balancer.</p> <p>After a subnet is removed, all EC2 instances registered with the load balancer in the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer balances the traffic among the remaining routable subnets.</p>",
-            "description": "<p>Removes the specified subnets from the set of configured subnets for the load balancer.</p> <p>After a subnet is removed, all EC2 instances registered with the load balancer in the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer balances the traffic among the remaining routable subnets.</p>",
+            "title": "DetachLoadBalancerFromSubnets",
+            "description": "Removes the specified subnets from the set of configured subnets for the load\nbalancer.\n\nAfter a subnet is removed, all EC2 instances registered with the load balancer\nin the removed subnet go into the OutOfService state. Then, the load balancer\nbalances the traffic among the remaining routable subnets.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -395,8 +395,8 @@
         },
         "DisableAvailabilityZonesForLoadBalancer": {
             "main": "./lib/actions/DisableAvailabilityZonesForLoadBalancer.js",
-            "title": "<p>Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer in EC2-Classic or a default VPC.</p> <p>For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.</p> <p>There must be at least one Availability Zone registered with a load balancer at all times. After an Availability Zone is removed, all instances registered with the load balancer that are in the removed Availability Zone go into the <code>OutOfService</code> state. Then, the load balancer attempts to equally balance the traffic among its remaining Availability Zones.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html\">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer in EC2-Classic or a default VPC.</p> <p>For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.</p> <p>There must be at least one Availability Zone registered with a load balancer at all times. After an Availability Zone is removed, all instances registered with the load balancer that are in the removed Availability Zone go into the <code>OutOfService</code> state. Then, the load balancer attempts to equally balance the traffic among its remaining Availability Zones.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html\">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "DisableAvailabilityZonesForLoadBalancer",
+            "description": "Removes the specified Availability Zones from the set of Availability Zones for\nthe specified load balancer in EC2-Classic or a default VPC.\n\nFor load balancers in a non-default VPC, use DetachLoadBalancerFromSubnets.\n\nThere must be at least one Availability Zone registered with a load balancer at\nall times. After an Availability Zone is removed, all instances registered with\nthe load balancer that are in the removed Availability Zone go into the \nOutOfService state. Then, the load balancer attempts to equally balance the\ntraffic among its remaining Availability Zones.\n\nFor more information, see Add or Remove Availability Zones\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -412,8 +412,8 @@
         },
         "EnableAvailabilityZonesForLoadBalancer": {
             "main": "./lib/actions/EnableAvailabilityZonesForLoadBalancer.js",
-            "title": "<p>Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer in EC2-Classic or a default VPC.</p> <p>For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.</p> <p>The load balancer evenly distributes requests across all its registered Availability Zones that contain instances. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html\">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer in EC2-Classic or a default VPC.</p> <p>For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.</p> <p>The load balancer evenly distributes requests across all its registered Availability Zones that contain instances. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html\">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "EnableAvailabilityZonesForLoadBalancer",
+            "description": "Adds the specified Availability Zones to the set of Availability Zones for the\nspecified load balancer in EC2-Classic or a default VPC.\n\nFor load balancers in a non-default VPC, use AttachLoadBalancerToSubnets.\n\nThe load balancer evenly distributes requests across all its registered\nAvailability Zones that contain instances. For more information, see Add or\nRemove Availability Zones\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -429,8 +429,8 @@
         },
         "ModifyLoadBalancerAttributes": {
             "main": "./lib/actions/ModifyLoadBalancerAttributes.js",
-            "title": "<p>Modifies the attributes of the specified load balancer.</p> <p>You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>, and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or, you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying an idle connection timeout value for your load balancer.</p> <p>For more information, see the following in the <i>Classic Load Balancers Guide</i>:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html\">Cross-Zone Load Balancing</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html\">Connection Draining</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html\">Access Logs</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html\">Idle Connection Timeout</a> </p> </li> </ul>",
-            "description": "<p>Modifies the attributes of the specified load balancer.</p> <p>You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>, and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or, you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying an idle connection timeout value for your load balancer.</p> <p>For more information, see the following in the <i>Classic Load Balancers Guide</i>:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html\">Cross-Zone Load Balancing</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html\">Connection Draining</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html\">Access Logs</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html\">Idle Connection Timeout</a> </p> </li> </ul>",
+            "title": "ModifyLoadBalancerAttributes",
+            "description": "Modifies the attributes of the specified load balancer.\n\nYou can modify the load balancer attributes, such as AccessLogs, \nConnectionDraining, and CrossZoneLoadBalancing by either enabling or disabling\nthem. Or, you can modify the load balancer attribute ConnectionSettings by\nspecifying an idle connection timeout value for your load balancer.\n\nFor more information, see the following in the Classic Load Balancers Guide:\n\n *   Cross-Zone Load Balancing\n   [http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html] \n    \n   \n   \n *   Connection Draining\n   [http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html] \n    \n   \n   \n *   Access Logs\n   [http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html] \n    \n   \n   \n *   Idle Connection Timeout\n   [http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html]",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -446,8 +446,8 @@
         },
         "RegisterInstancesWithLoadBalancer": {
             "main": "./lib/actions/RegisterInstancesWithLoadBalancer.js",
-            "title": "<p>Adds the specified instances to the specified load balancer.</p> <p>The instance must be a running instance in the same network as the load balancer (EC2-Classic or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register the linked EC2-Classic instances with the load balancer in the VPC.</p> <p>Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request has been registered. Instance registration takes a little time to complete. To check the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.</p> <p>After the instance is registered, it starts receiving traffic and requests from the load balancer. Any instance that is not in one of the Availability Zones registered for the load balancer is moved to the <code>OutOfService</code> state. If an Availability Zone is added to the load balancer later, any instances registered with the load balancer move to the <code>InService</code> state.</p> <p>To deregister instances from a load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html\">Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Adds the specified instances to the specified load balancer.</p> <p>The instance must be a running instance in the same network as the load balancer (EC2-Classic or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register the linked EC2-Classic instances with the load balancer in the VPC.</p> <p>Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request has been registered. Instance registration takes a little time to complete. To check the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.</p> <p>After the instance is registered, it starts receiving traffic and requests from the load balancer. Any instance that is not in one of the Availability Zones registered for the load balancer is moved to the <code>OutOfService</code> state. If an Availability Zone is added to the load balancer later, any instances registered with the load balancer move to the <code>InService</code> state.</p> <p>To deregister instances from a load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html\">Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "RegisterInstancesWithLoadBalancer",
+            "description": "Adds the specified instances to the specified load balancer.\n\nThe instance must be a running instance in the same network as the load balancer\n(EC2-Classic or the same VPC). If you have EC2-Classic instances and a load\nbalancer in a VPC with ClassicLink enabled, you can link the EC2-Classic\ninstances to that VPC and then register the linked EC2-Classic instances with\nthe load balancer in the VPC.\n\nNote that RegisterInstanceWithLoadBalancer completes when the request has been\nregistered. Instance registration takes a little time to complete. To check the\nstate of the registered instances, use DescribeLoadBalancers or \nDescribeInstanceHealth.\n\nAfter the instance is registered, it starts receiving traffic and requests from\nthe load balancer. Any instance that is not in one of the Availability Zones\nregistered for the load balancer is moved to the OutOfService state. If an\nAvailability Zone is added to the load balancer later, any instances registered\nwith the load balancer move to the InService state.\n\nTo deregister instances from a load balancer, use \nDeregisterInstancesFromLoadBalancer.\n\nFor more information, see Register or De-Register EC2 Instances\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -463,7 +463,7 @@
         },
         "RemoveTags": {
             "main": "./lib/actions/RemoveTags.js",
-            "title": "Removes one or more tags from the specified load balancer.",
+            "title": "RemoveTags",
             "description": "Removes one or more tags from the specified load balancer.",
             "fields": {
                 "verbose": {
@@ -480,8 +480,8 @@
         },
         "SetLoadBalancerListenerSSLCertificate": {
             "main": "./lib/actions/SetLoadBalancerListenerSSLCertificate.js",
-            "title": "<p>Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used on the same load balancer and port.</p> <p>For more information about updating your SSL certificate, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html\">Replace the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used on the same load balancer and port.</p> <p>For more information about updating your SSL certificate, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html\">Replace the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "SetLoadBalancerListenerSSLCertificate",
+            "description": "Sets the certificate that terminates the specified listener's SSL connections.\nThe specified certificate replaces any prior certificate that was used on the\nsame load balancer and port.\n\nFor more information about updating your SSL certificate, see Replace the SSL\nCertificate for Your Load Balancer\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -497,8 +497,8 @@
         },
         "SetLoadBalancerPoliciesForBackendServer": {
             "main": "./lib/actions/SetLoadBalancerPoliciesForBackendServer.js",
-            "title": "<p>Replaces the set of policies associated with the specified port on which the EC2 instance is listening with a new set of policies. At this time, only the back-end server authentication policy type can be applied to the instance ports; this policy type is composed of multiple public key policies.</p> <p>Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the policies, use the <code>PolicyNames</code> parameter to list the policies that you want to enable.</p> <p>You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to verify that the policy is associated with the EC2 instance.</p> <p>For more information about enabling back-end instance authentication, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt\">Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For more information about Proxy Protocol, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html\">Configure Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Replaces the set of policies associated with the specified port on which the EC2 instance is listening with a new set of policies. At this time, only the back-end server authentication policy type can be applied to the instance ports; this policy type is composed of multiple public key policies.</p> <p>Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the policies, use the <code>PolicyNames</code> parameter to list the policies that you want to enable.</p> <p>You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to verify that the policy is associated with the EC2 instance.</p> <p>For more information about enabling back-end instance authentication, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt\">Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For more information about Proxy Protocol, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html\">Configure Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "SetLoadBalancerPoliciesForBackendServer",
+            "description": "Replaces the set of policies associated with the specified port on which the EC2\ninstance is listening with a new set of policies. At this time, only the\nback-end server authentication policy type can be applied to the instance ports;\nthis policy type is composed of multiple public key policies.\n\nEach time you use SetLoadBalancerPoliciesForBackendServer to enable the\npolicies, use the PolicyNames parameter to list the policies that you want to\nenable.\n\nYou can use DescribeLoadBalancers or DescribeLoadBalancerPolicies to verify that\nthe policy is associated with the EC2 instance.\n\nFor more information about enabling back-end instance authentication, see \nConfigure Back-end Instance Authentication\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt] \nin the Classic Load Balancers Guide. For more information about Proxy Protocol,\nsee Configure Proxy Protocol Support\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -514,8 +514,8 @@
         },
         "SetLoadBalancerPoliciesOfListener": {
             "main": "./lib/actions/SetLoadBalancerPoliciesOfListener.js",
-            "title": "<p>Replaces the current set of policies for the specified load balancer port with the specified set of policies.</p> <p>To enable back-end server authentication, use <a>SetLoadBalancerPoliciesForBackendServer</a>.</p> <p>For more information about setting policies, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html\">Update the SSL Negotiation Configuration</a>, <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration\">Duration-Based Session Stickiness</a>, and <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application\">Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>",
-            "description": "<p>Replaces the current set of policies for the specified load balancer port with the specified set of policies.</p> <p>To enable back-end server authentication, use <a>SetLoadBalancerPoliciesForBackendServer</a>.</p> <p>For more information about setting policies, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html\">Update the SSL Negotiation Configuration</a>, <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration\">Duration-Based Session Stickiness</a>, and <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application\">Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>",
+            "title": "SetLoadBalancerPoliciesOfListener",
+            "description": "Replaces the current set of policies for the specified load balancer port with\nthe specified set of policies.\n\nTo enable back-end server authentication, use \nSetLoadBalancerPoliciesForBackendServer.\n\nFor more information about setting policies, see Update the SSL Negotiation\nConfiguration\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html]\n, Duration-Based Session Stickiness\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration]\n, and Application-Controlled Session Stickiness\n[http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application] \nin the Classic Load Balancers Guide.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
